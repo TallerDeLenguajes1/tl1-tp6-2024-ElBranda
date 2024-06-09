@@ -1,17 +1,14 @@
+float A, B;
+
 while (true) {
     Console.WriteLine("Elija la operación:");
     Console.WriteLine("1. Sumar");
     Console.WriteLine("2. Restar");
     Console.WriteLine("3. Multiplicar");
     Console.WriteLine("4. Dividir");
-    Console.WriteLine("0. Salir");
     Console.Write("Op: ");
 
-    if (int.TryParse(Console.ReadLine(), out int sel) && sel >= 0 && sel <= 4) {
-        if (sel == 0) break;
-
-        float A, B;
-
+    if (int.TryParse(Console.ReadLine(), out int sel)) {
         while (true) {
             Console.Write("Ingrese número A: ");
 
@@ -29,13 +26,14 @@ while (true) {
         Console.Write("Resultado: ");
 
         switch (sel) {
+            case 1: Console.WriteLine(A+B); break;
             case 2: Console.WriteLine(A-B); break;
             case 3: Console.WriteLine(A*B); break;
             case 4: Console.WriteLine(A/B); break;
-            default: Console.WriteLine(A+B); break;
         }
 
         Console.WriteLine();
+        break;
     } else Console.WriteLine("Entrada incorrecta");
 }
 
@@ -55,8 +53,6 @@ Console.WriteLine("Raiz cuadrada: " + Math.Sqrt(num));
 Console.WriteLine("Seno: " + Math.Sin(num));
 Console.WriteLine("Coseno: " + Math.Cos(num));
 Console.WriteLine("Entero: " + Math.Ceiling(num));
-
-float A, B;
 
 while (true) {
     Console.Write("Ingrese A: ");
